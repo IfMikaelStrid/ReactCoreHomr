@@ -1,7 +1,10 @@
-﻿main_container{
-    height:100%;
-    position:absolute;
+﻿main_container {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 10px;
+    position: relative;
 }
+
 .flex_container {
     display: flex;
     align-items: center;
