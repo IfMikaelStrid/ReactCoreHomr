@@ -13,8 +13,8 @@ export class Home extends Component {
         return (
             <div className="main_container">
                 <div data-relative-input="true" className="flex_container" id="scene">
-                    <div data-depth="0.2" className="front_layer">My first Layer!</div>
-                    <div data-depth="0.6" className="back_layer">My second Layer!</div>
+                    <div data-depth="0.1" className="front_layer"/>
+                    <div data-depth="0.2" className="back_layer"/>
                 </div>
             </div>
         );

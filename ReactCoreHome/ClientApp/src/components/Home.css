@@ -8,15 +8,15 @@
     justify-content: center;
 }
 .front_layer {
-    background-color: azure;
-    width: 200%;
+    background-color: white;
+    width: 50%;
     height: 100px;
     box-shadow: 5px 10px 8px #888888;
 }
 
 .back_layer {
-    background-color: aquamarine;
-    width: 200%;
+    background-color: white;
+    width: 50%;
     height: 200px;
     box-shadow: 5px 10px 8px #888888;
 }
