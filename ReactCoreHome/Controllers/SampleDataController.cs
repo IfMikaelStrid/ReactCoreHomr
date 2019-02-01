@@ -22,18 +22,7 @@ namespace ReactCoreHome.Controllers
                 Source = "Website",
                 WebSiteLink = "https://www.mikaelstrid.net"
             };
-            var WebContact2 = new ContactCard()
-            {
-                FirstName = "Mikael",
-                SurName = "Strid",
-                Email = "Mikael.strid@xlent.se",
-                Phone = "+46(0)736 - 89 29 33",
-                Source = "Website",
-                WebSiteLink = "https://www.mikaelstrid.net"
-            };
-            ReturnList.Add(WebContact2);
             ReturnList.Add(WebContact);
-
             return ReturnList;
         }
 
