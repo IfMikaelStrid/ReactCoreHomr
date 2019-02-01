@@ -5,18 +5,15 @@ export class Home extends Component {
     displayName = Home.name
     componentDidMount() {
         var scene = document.getElementById('scene');
-        var parallaxInstance = new Parallax(scene, {
-            relativeInput: true
-        });
+        var parallaxInstance = new Parallax(scene);
     }
     render() {
         return (
-            <div className="main_container">
-                <div data-relative-input="true" className="flex_container" id="scene">
-                    <div data-depth="0.1" className="front_layer"/>
-                    <div data-depth="0.2" className="back_layer"/>
-                </div>
+            <div className="flex_container" id="scene">
+                <div className="greeting_layer" data-depth="0.2" id="greetings_container">
+                Mikael Strid .NET
             </div>
+        </div>
         );
     }
 }

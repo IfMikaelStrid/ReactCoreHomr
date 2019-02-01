@@ -1,14 +1,16 @@
-﻿main_container {
-    margin: 0 auto;
-    max-width: 600px;
-    padding: 10px;
-    position: relative;
-}
-
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto');
 .flex_container {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 90vh;
+}
+.greeting_layer {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 5vw;
+    animation-name: greeting;
+    animation-duration: 4s;
 }
 .front_layer {
     background-color: white;
@@ -22,4 +24,15 @@
     width: 50%;
     height: 200px;
     box-shadow: 5px 10px 8px #888888;
+}
+
+
+/* The animation code */
+@keyframes greeting {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
