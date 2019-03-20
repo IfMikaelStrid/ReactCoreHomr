@@ -1,7 +1,8 @@
 ﻿import React, { Component } from 'react';
 import Parallax from 'parallax-js';
 import './Home.css';
-export class Greeting extends Component {
+export class Greeting extends Component
+{
     displayName = Greeting.name
 
     componentDidMount() {

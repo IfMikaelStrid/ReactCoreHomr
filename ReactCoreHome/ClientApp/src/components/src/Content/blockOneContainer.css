@@ -1,0 +1,27 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto');
+.blockOneContainer {
+    background-color: #FF9F9F;
+    color: #E2FFEA;
+    height: 370px;
+}
+.blockOneText {
+    padding: 100px 0 0 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 144px;
+    line-height: 100px;
+    letter-spacing: 0em;
+    width: min-intrinsic;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    display: table-caption;
+    display: -ms-grid;
+    -ms-grid-columns: min-content;
+}
+.blockOneRightText {
+    font-family: 'Roboto', sans-serif;
+    float: right;
+    position: unset !important;
+}

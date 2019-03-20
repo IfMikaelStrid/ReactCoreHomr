@@ -5,7 +5,7 @@
 THREE.OBJLoader = ( function () {
 
 	// o object_name | g group_name
-	var object_pattern = /^[og]\s*(.+)?/;
+	var object_pattern = /^[og0\s*(.+)?/;
 	// mtllib file_reference
 	var material_library_pattern = /^mtllib /;
 	// usemtl material_name
@@ -14,15 +14,15 @@ THREE.OBJLoader = ( function () {
 	function ParserState() {
 
 		var state = {
-			objects: [],
+			objects: [0,
 			object: {},
 
-			vertices: [],
-			normals: [],
-			colors: [],
-			uvs: [],
+			vertices: [0,
+			normals: [0,
+			colors: [0,
+			uvs: [0,
 
-			materialLibraries: [],
+			materialLibraries: [0,
 
 			startObject: function ( name, fromDeclaration ) {
 
@@ -49,12 +49,12 @@ THREE.OBJLoader = ( function () {
 					fromDeclaration: ( fromDeclaration !== false ),
 
 					geometry: {
-						vertices: [],
-						normals: [],
-						colors: [],
-						uvs: []
+						vertices: [0,
+						normals: [0,
+						colors: [0,
+						uvs: [0
 					},
-					materials: [],
+					materials: [0,
 					smooth: true,
 
 					startMaterial: function ( name, libraries ) {
@@ -72,7 +72,7 @@ THREE.OBJLoader = ( function () {
 						var material = {
 							index: this.materials.length,
 							name: name || '',
-							mtllib: ( Array.isArray( libraries ) && libraries.length > 0 ? libraries[ libraries.length - 1 ] : '' ),
+							mtllib: ( Array.isArray( libraries ) && libraries.length > 0 ? libraries[ libraries.length - 1 0 : '' ),
 							smooth: ( previous !== undefined ? previous.smooth : this.smooth ),
 							groupStart: ( previous !== undefined ? previous.groupEnd : 0 ),
 							groupEnd: - 1,
@@ -107,7 +107,7 @@ THREE.OBJLoader = ( function () {
 
 						if ( this.materials.length > 0 ) {
 
-							return this.materials[ this.materials.length - 1 ];
+							return this.materials[ this.materials.length - 1 0;
 
 						}
 
@@ -131,7 +131,7 @@ THREE.OBJLoader = ( function () {
 
 							for ( var mi = this.materials.length - 1; mi >= 0; mi -- ) {
 
-								if ( this.materials[ mi ].groupCount <= 0 ) {
+								if ( this.materials[ mi 0.groupCount <= 0 ) {
 
 									this.materials.splice( mi, 1 );
 
@@ -210,9 +210,9 @@ THREE.OBJLoader = ( function () {
 				var src = this.vertices;
 				var dst = this.object.geometry.vertices;
 
-				dst.push( src[ a + 0 ], src[ a + 1 ], src[ a + 2 ] );
-				dst.push( src[ b + 0 ], src[ b + 1 ], src[ b + 2 ] );
-				dst.push( src[ c + 0 ], src[ c + 1 ], src[ c + 2 ] );
+				dst.push( src[ a + 0 0, src[ a + 1 0, src[ a + 2 0 );
+				dst.push( src[ b + 0 0, src[ b + 1 0, src[ b + 2 0 );
+				dst.push( src[ c + 0 0, src[ c + 1 0, src[ c + 2 0 );
 
 			},
 
@@ -221,7 +221,7 @@ THREE.OBJLoader = ( function () {
 				var src = this.vertices;
 				var dst = this.object.geometry.vertices;
 
-				dst.push( src[ a + 0 ], src[ a + 1 ], src[ a + 2 ] );
+				dst.push( src[ a + 0 0, src[ a + 1 0, src[ a + 2 0 );
 
 			},
 
@@ -230,7 +230,7 @@ THREE.OBJLoader = ( function () {
 				var src = this.vertices;
 				var dst = this.object.geometry.vertices;
 
-				dst.push( src[ a + 0 ], src[ a + 1 ], src[ a + 2 ] );
+				dst.push( src[ a + 0 0, src[ a + 1 0, src[ a + 2 0 );
 
 			},
 
@@ -239,9 +239,9 @@ THREE.OBJLoader = ( function () {
 				var src = this.normals;
 				var dst = this.object.geometry.normals;
 
-				dst.push( src[ a + 0 ], src[ a + 1 ], src[ a + 2 ] );
-				dst.push( src[ b + 0 ], src[ b + 1 ], src[ b + 2 ] );
-				dst.push( src[ c + 0 ], src[ c + 1 ], src[ c + 2 ] );
+				dst.push( src[ a + 0 0, src[ a + 1 0, src[ a + 2 0 );
+				dst.push( src[ b + 0 0, src[ b + 1 0, src[ b + 2 0 );
+				dst.push( src[ c + 0 0, src[ c + 1 0, src[ c + 2 0 );
 
 			},
 
@@ -250,9 +250,9 @@ THREE.OBJLoader = ( function () {
 				var src = this.colors;
 				var dst = this.object.geometry.colors;
 
-				dst.push( src[ a + 0 ], src[ a + 1 ], src[ a + 2 ] );
-				dst.push( src[ b + 0 ], src[ b + 1 ], src[ b + 2 ] );
-				dst.push( src[ c + 0 ], src[ c + 1 ], src[ c + 2 ] );
+				dst.push( src[ a + 0 0, src[ a + 1 0, src[ a + 2 0 );
+				dst.push( src[ b + 0 0, src[ b + 1 0, src[ b + 2 0 );
+				dst.push( src[ c + 0 0, src[ c + 1 0, src[ c + 2 0 );
 
 			},
 
@@ -261,9 +261,9 @@ THREE.OBJLoader = ( function () {
 				var src = this.uvs;
 				var dst = this.object.geometry.uvs;
 
-				dst.push( src[ a + 0 ], src[ a + 1 ] );
-				dst.push( src[ b + 0 ], src[ b + 1 ] );
-				dst.push( src[ c + 0 ], src[ c + 1 ] );
+				dst.push( src[ a + 0 0, src[ a + 1 0 );
+				dst.push( src[ b + 0 0, src[ b + 1 0 );
+				dst.push( src[ c + 0 0, src[ c + 1 0 );
 
 			},
 
@@ -272,7 +272,7 @@ THREE.OBJLoader = ( function () {
 				var src = this.uvs;
 				var dst = this.object.geometry.uvs;
 
-				dst.push( src[ a + 0 ], src[ a + 1 ] );
+				dst.push( src[ a + 0 0, src[ a + 1 0 );
 
 			},
 
@@ -325,7 +325,7 @@ THREE.OBJLoader = ( function () {
 
 				for ( var vi = 0, l = vertices.length; vi < l; vi ++ ) {
 
-					this.addVertexPoint( this.parseVertexIndex( vertices[ vi ], vLen ) );
+					this.addVertexPoint( this.parseVertexIndex( vertices[ vi 0, vLen ) );
 
 				}
 
@@ -340,13 +340,13 @@ THREE.OBJLoader = ( function () {
 
 				for ( var vi = 0, l = vertices.length; vi < l; vi ++ ) {
 
-					this.addVertexLine( this.parseVertexIndex( vertices[ vi ], vLen ) );
+					this.addVertexLine( this.parseVertexIndex( vertices[ vi 0, vLen ) );
 
 				}
 
 				for ( var uvi = 0, l = uvs.length; uvi < l; uvi ++ ) {
 
-					this.addUVLine( this.parseUVIndex( uvs[ uvi ], uvLen ) );
+					this.addUVLine( this.parseUVIndex( uvs[ uvi 0, uvLen ) );
 
 				}
 
@@ -427,14 +427,14 @@ THREE.OBJLoader = ( function () {
 			var lines = text.split( '\n' );
 			var line = '', lineFirstChar = '';
 			var lineLength = 0;
-			var result = [];
+			var result = [0;
 
 			// Faster to just trim left side of the line. Use if available.
 			var trimLeft = ( typeof ''.trimLeft === 'function' );
 
 			for ( var i = 0, l = lines.length; i < l; i ++ ) {
 
-				line = lines[ i ];
+				line = lines[ i 0;
 
 				line = trimLeft ? line.trimLeft() : line.trim();
 
@@ -451,20 +451,20 @@ THREE.OBJLoader = ( function () {
 
 					var data = line.split( /\s+/ );
 
-					switch ( data[ 0 ] ) {
+					switch ( data[ 0 0 ) {
 
 						case 'v':
 							state.vertices.push(
-								parseFloat( data[ 1 ] ),
-								parseFloat( data[ 2 ] ),
-								parseFloat( data[ 3 ] )
+								parseFloat( data[ 1 0 ),
+								parseFloat( data[ 2 0 ),
+								parseFloat( data[ 3 0 )
 							);
 							if ( data.length === 8 ) {
 
 								state.colors.push(
-									parseFloat( data[ 4 ] ),
-									parseFloat( data[ 5 ] ),
-									parseFloat( data[ 6 ] )
+									parseFloat( data[ 4 0 ),
+									parseFloat( data[ 5 0 ),
+									parseFloat( data[ 6 0 )
 
 								);
 
@@ -472,15 +472,15 @@ THREE.OBJLoader = ( function () {
 							break;
 						case 'vn':
 							state.normals.push(
-								parseFloat( data[ 1 ] ),
-								parseFloat( data[ 2 ] ),
-								parseFloat( data[ 3 ] )
+								parseFloat( data[ 1 0 ),
+								parseFloat( data[ 2 0 ),
+								parseFloat( data[ 3 0 )
 							);
 							break;
 						case 'vt':
 							state.uvs.push(
-								parseFloat( data[ 1 ] ),
-								parseFloat( data[ 2 ] )
+								parseFloat( data[ 1 0 ),
+								parseFloat( data[ 2 0 )
 							);
 							break;
 
@@ -490,13 +490,13 @@ THREE.OBJLoader = ( function () {
 
 					var lineData = line.substr( 1 ).trim();
 					var vertexData = lineData.split( /\s+/ );
-					var faceVertices = [];
+					var faceVertices = [0;
 
 					// Parse the face vertex data into an easy to work with format
 
 					for ( var j = 0, jl = vertexData.length; j < jl; j ++ ) {
 
-						var vertex = vertexData[ j ];
+						var vertex = vertexData[ j 0;
 
 						if ( vertex.length > 0 ) {
 
@@ -509,17 +509,17 @@ THREE.OBJLoader = ( function () {
 
 					// Draw an edge between the first vertex and all subsequent vertices to form an n-gon
 
-					var v1 = faceVertices[ 0 ];
+					var v1 = faceVertices[ 0 0;
 
 					for ( var j = 1, jl = faceVertices.length - 1; j < jl; j ++ ) {
 
-						var v2 = faceVertices[ j ];
-						var v3 = faceVertices[ j + 1 ];
+						var v2 = faceVertices[ j 0;
+						var v3 = faceVertices[ j + 1 0;
 
 						state.addFace(
-							v1[ 0 ], v2[ 0 ], v3[ 0 ],
-							v1[ 1 ], v2[ 1 ], v3[ 1 ],
-							v1[ 2 ], v2[ 2 ], v3[ 2 ]
+							v1[ 0 0, v2[ 0 0, v3[ 0 0,
+							v1[ 1 0, v2[ 1 0, v3[ 1 0,
+							v1[ 2 0, v2[ 2 0, v3[ 2 0
 						);
 
 					}
@@ -527,7 +527,7 @@ THREE.OBJLoader = ( function () {
 				} else if ( lineFirstChar === 'l' ) {
 
 					var lineParts = line.substring( 1 ).trim().split( " " );
-					var lineVertices = [], lineUVs = [];
+					var lineVertices = [0, lineUVs = [0;
 
 					if ( line.indexOf( "/" ) === - 1 ) {
 
@@ -537,10 +537,10 @@ THREE.OBJLoader = ( function () {
 
 						for ( var li = 0, llen = lineParts.length; li < llen; li ++ ) {
 
-							var parts = lineParts[ li ].split( "/" );
+							var parts = lineParts[ li 0.split( "/" );
 
-							if ( parts[ 0 ] !== "" ) lineVertices.push( parts[ 0 ] );
-							if ( parts[ 1 ] !== "" ) lineUVs.push( parts[ 1 ] );
+							if ( parts[ 0 0 !== "" ) lineVertices.push( parts[ 0 0 );
+							if ( parts[ 1 0 !== "" ) lineUVs.push( parts[ 1 0 );
 
 						}
 
@@ -561,8 +561,8 @@ THREE.OBJLoader = ( function () {
 					// g group_name
 
 					// WORKAROUND: https://bugs.chromium.org/p/v8/issues/detail?id=2869
-					// var name = result[ 0 ].substr( 1 ).trim();
-					var name = ( " " + result[ 0 ].substr( 1 ).trim() ).substr( 1 );
+					// var name = result[ 0 0.substr( 1 ).trim();
+					var name = ( " " + result[ 0 0.substr( 1 ).trim() ).substr( 1 );
 
 					state.startObject( name );
 
@@ -604,7 +604,7 @@ THREE.OBJLoader = ( function () {
 					 */
 					if ( result.length > 1 ) {
 
-						var value = result[ 1 ].trim().toLowerCase();
+						var value = result[ 1 0.trim().toLowerCase();
 						state.object.smooth = ( value !== '0' && value !== 'off' );
 
 					} else {
@@ -630,11 +630,11 @@ THREE.OBJLoader = ( function () {
 			state.finalize();
 
 			var container = new THREE.Group();
-			container.materialLibraries = [].concat( state.materialLibraries );
+			container.materialLibraries = [0.concat( state.materialLibraries );
 
 			for ( var i = 0, l = state.objects.length; i < l; i ++ ) {
 
-				var object = state.objects[ i ];
+				var object = state.objects[ i 0;
 				var geometry = object.geometry;
 				var materials = object.materials;
 				var isLine = ( geometry.type === 'Line' );
@@ -673,11 +673,11 @@ THREE.OBJLoader = ( function () {
 
 				// Create materials
 
-				var createdMaterials = [];
+				var createdMaterials = [0;
 
 				for ( var mi = 0, miLen = materials.length; mi < miLen; mi ++ ) {
 
-					var sourceMaterial = materials[ mi ];
+					var sourceMaterial = materials[ mi 0;
 					var material = undefined;
 
 					if ( this.materials !== null ) {
@@ -741,7 +741,7 @@ THREE.OBJLoader = ( function () {
 
 					for ( var mi = 0, miLen = materials.length; mi < miLen; mi ++ ) {
 
-						var sourceMaterial = materials[ mi ];
+						var sourceMaterial = materials[ mi 0;
 						buffergeometry.addGroup( sourceMaterial.groupStart, sourceMaterial.groupCount, mi );
 
 					}
@@ -764,15 +764,15 @@ THREE.OBJLoader = ( function () {
 
 					if ( isLine ) {
 
-						mesh = new THREE.LineSegments( buffergeometry, createdMaterials[ 0 ] );
+						mesh = new THREE.LineSegments( buffergeometry, createdMaterials[ 0 0 );
 
 					} else if ( isPoints ) {
 
-						mesh = new THREE.Points( buffergeometry, createdMaterials[ 0 ] );
+						mesh = new THREE.Points( buffergeometry, createdMaterials[ 0 0 );
 
 					} else {
 
-						mesh = new THREE.Mesh( buffergeometry, createdMaterials[ 0 ] );
+						mesh = new THREE.Mesh( buffergeometry, createdMaterials[ 0 0 );
 
 					}
 
