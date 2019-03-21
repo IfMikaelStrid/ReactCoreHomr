@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Parallax from 'parallax-js';
 import { Greeting } from './Greeting.js';
-import { ThreeSnowHouse } from './ThreeSnowHouse.js';
 import { ContentBlockOne } from './ContentBlockOne.js';
 import './Home.css';
 
