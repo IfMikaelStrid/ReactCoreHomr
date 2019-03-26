@@ -7,7 +7,7 @@
     top: 0px;
     width: 30%;
     height: 500px;
-    background: url(http://lorempixel.com/200/150/);
+    background-color: #FFD69A;
     -webkit-clip-path: polygon(42% 0, 100% 0, 100% 100%, 29% 100%, 10% 45%);
     clip-path: polygon(42% 0, 100% 0, 100% 100%, 29% 100%, 10% 45%);
 }
