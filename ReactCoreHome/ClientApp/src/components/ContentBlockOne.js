@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import Parallax from 'parallax-js';
-import './src/Content/ContentBlockOne.css';
+import './src/Content/css/ContentBlockOne.css';
 export class ContentBlockOne extends Component
 {
     displayName = "Block"

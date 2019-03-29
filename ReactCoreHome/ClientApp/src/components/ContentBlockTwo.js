@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import './src/Content/ContentBlockTwo.css';
+import './src/Content/css/ContentBlockTwo.css';
 export class ContentBlockTwo extends Component {
     displayName = "Block two"
     render() {
