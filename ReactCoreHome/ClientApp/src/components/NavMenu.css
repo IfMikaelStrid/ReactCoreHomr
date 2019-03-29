@@ -10,7 +10,9 @@
     background-color: #4189C7;
     color: white;
 }
-
+.navbar-inverse{
+    background-color: black !important;
+}
 /*@media (min-width: 768px) {*/
     /* On large screens, convert the nav menu to a vertical sidebar */
     /*.navbar {
