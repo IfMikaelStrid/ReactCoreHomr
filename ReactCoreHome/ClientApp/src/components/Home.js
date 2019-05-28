@@ -16,7 +16,9 @@ export class Home extends Component
     render() {
         return (
             <div>
-                <Greeting />
+                <div className="flex_background">
+                    <Greeting />
+                </div>
                 <MontyHallContainer />
                 <ContentBlockOne />
                 <ContentBlockTwo />

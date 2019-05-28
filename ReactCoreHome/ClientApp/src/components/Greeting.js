@@ -11,11 +11,11 @@ export class Greeting extends Component
     }
     render() {
         return (
-            <div className="flex_container" id="scene">
-                <div className="greeting_layer" data-depth="0.5" id="greetings_container">
-                    Mikael Strid .NET
+                <div className="flex_container" id="scene">
+                    <div className="greeting_layer" data-depth="0.5" id="greetings_container">
+                        Mikael Strid .NET
+                    </div>
                 </div>
-            </div>
         );
     }
 }
