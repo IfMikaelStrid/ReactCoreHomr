@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Parallax from 'parallax-js';
 import { Greeting } from './Greeting.js';
-import { MontyHallContainer } from './MontyHallContainer.js';
-import { ContentBlockOne } from './ContentBlockOne.js';
-import { ContentBlockTwo } from './ContentBlockTwo.js';
+import { AboutSection } from './aboutsection.js';
 import './Home.css';
 
 export class Home extends Component
@@ -19,9 +17,7 @@ export class Home extends Component
                 <div className="flex_background">
                     <Greeting />
                 </div>
-                <MontyHallContainer />
-                <ContentBlockOne />
-                <ContentBlockTwo />
+
             </div>
         );
     }

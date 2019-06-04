@@ -1,0 +1,25 @@
+﻿.AboutHeader {
+    font-weight: 900;
+    font-size: 5em;
+    line-height: 100px;
+    letter-spacing: 0em;
+    display: table-caption;
+    display: -ms-grid;
+    -ms-grid-columns: min-content;
+}
+.AboutBody {
+    font-weight: 600;
+    font-size: 2em;
+}
+.AboutFlex {
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    text-align: center;
+}
